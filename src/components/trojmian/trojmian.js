@@ -1,13 +1,34 @@
 define(['knockout', 'text!./trojmian.html'], function(ko, templateMarkup) {
 
   function Trojmian(params) {
-    this.message = ko.observable('Hello from the trojmian component!');
+    var self = this;
 
-    this.a = ko.observable("");
-    this.b = ko.observable("");
-    this.c = ko.observable("");
+    self.a = ko.observable("");
+    self.b = ko.observable("");
+    self.c = ko.observable("");
 
-    this.resolve = function(){}
+    self.x1 = ko.observable("");
+    self.x2 = ko.observable("");
+
+    self.liczba_rozwiazan = ko.observable("");
+
+    self.resolve = function(){
+      var delta = self.b() * self.b() - 4 * self.a() * self.c();
+      if(delta > 0){
+        self.liczba_rozwiazan(2);
+        self.x1((-self.b() - Math.sqrt(delta))/(2*self.a()));
+        self.x2((-self.b() + Math.sqrt(delta))/(2*self.a()));
+      }
+      else if (delta == 0){
+        self.liczba_rozwiazan(1);
+        self.x1(-self.b()/2);
+      }
+      else {
+        self.liczba_rozwiazan(0);
+        self.x1("");
+        self.x2("");
+      }
+    }
   }
 
   // This runs when the component is torn down. Put here any logic necessary to clean up,

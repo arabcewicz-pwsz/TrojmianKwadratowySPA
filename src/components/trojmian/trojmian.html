@@ -1,26 +1,30 @@
-<h3>Rozwiązanie równania ax^2 + bx + c = 0</h3>
+<h3>Współczynniki równania ax^2 + bx + c = 0</h3>
 <form class="form-horizontal">
     <div class="form-group">
         <label for="a" class="col-sm-2 control-label">a</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="a">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="a" data-bind="value: a">
         </div>
     </div>
     <div class="form-group">
         <label for="b" class="col-sm-2 control-label">b</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="b">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="b" data-bind="value: b">
         </div>
     </div>
     <div class="form-group">
         <label for="c" class="col-sm-2 control-label">c</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="c">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="c" data-bind="value: c">
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button data-bind='click: resolve' class="btn btn-success">Oblicz</button>
+            <button data-bind='click: resolve' class="btn btn-success">Oblicz rozwiązanie równania</button>
         </div>
     </div>
 </form>
+
+<h3>Rozwiązanie równania ax^2 + bx + c = 0</h3>
+<p data-bind="text: x1"></p>
+<p data-bind="text: x2"></p>
