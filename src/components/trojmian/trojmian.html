@@ -1,21 +1,30 @@
+<style>
+    .validationMessage {
+        margin-left: 8px;
+        color: #b25050;
+        font-size: 85%;
+        margin-bottom: 8px;
+    }
+</style>
+
 <h3>Współczynniki równania ax^2 + bx + c = 0</h3>
 <form class="form-horizontal">
-    <div class="form-group">
-        <label for="a" class="col-sm-2 control-label">a</label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" id="a" data-bind="value: a">
+    <div class="form-group" data-bind="validationElement: a">
+        <label for="wspa" class="col-sm-2 control-label">a</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="wspa" data-bind="value: a">
         </div>
     </div>
-    <div class="form-group">
-        <label for="b" class="col-sm-2 control-label">b</label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" id="b" data-bind="value: b">
+    <div class="form-group" data-bind="validationElement: b">
+        <label for="wspb" class="col-sm-2 control-label">b</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="wspb" data-bind="value: b">
         </div>
     </div>
-    <div class="form-group">
-        <label for="c" class="col-sm-2 control-label">c</label>
-        <div class="col-sm-2">
-            <input type="text" class="form-control" id="c" data-bind="value: c">
+    <div class="form-group" data-bind="validationElement: c">
+        <label for="wspc" class="col-sm-2 control-label">c</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="wspc" data-bind="value: c">
         </div>
     </div>
     <div class="form-group">
@@ -32,3 +41,4 @@
     <p data-bind="visible: liczba_rozwiazan() == 2">x2 = <span data-bind="text: x2"></span></p>
     <button data-bind='click: nowe' class="btn btn-primary">Nowe</button>
 </div>
+

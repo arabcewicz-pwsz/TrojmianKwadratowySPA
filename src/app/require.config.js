@@ -8,6 +8,8 @@ var require = {
         "jquery":               "bower_modules/jquery/dist/jquery",
         "knockout":             "bower_modules/knockout/dist/knockout",
         "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections",
+        "knockout.validation":  "bower_modules/knockout-validation/dist/knockout.validation",
+        "knockout-validation-locales": "bower_modules/knockout-validation/localization/pl-PL",
         "signals":              "bower_modules/js-signals/dist/signals.min",
         "text":                 "bower_modules/requirejs-text/text"
     },

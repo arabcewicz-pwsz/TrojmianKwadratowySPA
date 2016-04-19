@@ -1,4 +1,4 @@
-define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections'], function($, ko, router) {
+define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections', 'knockout.validation', 'knockout-validation-locales'], function($, ko, router) {
 
   // Components can be packaged as AMD modules, such as the following:
   ko.components.register('nav-bar', { require: 'components/nav-bar/nav-bar' });
@@ -14,5 +14,13 @@ define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections'], 
   // [Scaffolded component registrations will be inserted here. To retain this feature, don't remove this comment.]
 
   // Start the application
+
+  ko.validation.init({
+    errorElementClass: 'has-error',
+    decorateInputElement: true,
+    grouping: { deep: true, observable: true }
+  });
+  ko.validation.locale('pl-PL');
+
   ko.applyBindings({ route: router.currentRoute });
 });
