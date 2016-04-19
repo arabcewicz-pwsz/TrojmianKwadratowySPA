@@ -29,6 +29,11 @@ define(['knockout', 'text!./trojmian.html'], function(ko, templateMarkup) {
         self.x2("");
       }
     }
+
+      self.obliczono = function(){
+          return !isNaN(parseInt(self.liczba_rozwiazan()));
+      }
+
   }
 
   // This runs when the component is torn down. Put here any logic necessary to clean up,
