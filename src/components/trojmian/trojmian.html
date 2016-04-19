@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button data-bind='click: resolve' class="btn btn-success">Oblicz pierwiastki</button>
+            <button data-bind='click: rozwiaz, visible: !obliczono()' class="btn btn-success">Oblicz pierwiastki</button>
         </div>
     </div>
 </form>
@@ -30,4 +30,5 @@
     <p>Równanie posiada <span data-bind="text: liczba_rozwiazan"></span> rozwiązań rzeczywistych:</p>
     <p data-bind="visible: liczba_rozwiazan() > 0" >x1 = <span data-bind="text: x1"></span></p>
     <p data-bind="visible: liczba_rozwiazan() == 2">x2 = <span data-bind="text: x2"></span></p>
+    <button data-bind='click: nowe' class="btn btn-primary">Nowe</button>
 </div>

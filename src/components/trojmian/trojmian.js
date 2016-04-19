@@ -12,7 +12,7 @@ define(['knockout', 'text!./trojmian.html'], function(ko, templateMarkup) {
 
     self.liczba_rozwiazan = ko.observable("");
 
-    self.resolve = function(){
+    self.rozwiaz = function(){
       var delta = self.b() * self.b() - 4 * self.a() * self.c();
       if(delta > 0){
         self.liczba_rozwiazan(2);
@@ -28,10 +28,16 @@ define(['knockout', 'text!./trojmian.html'], function(ko, templateMarkup) {
         self.x1("");
         self.x2("");
       }
-    }
-
+    };
       self.obliczono = function(){
           return !isNaN(parseInt(self.liczba_rozwiazan()));
+      };
+
+      self.nowe = function(){
+          self.a("");
+          self.b("");
+          self.c("");
+          self.liczba_rozwiazan("");
       }
 
   }
