@@ -24,20 +24,27 @@ define(['knockout', 'text!./trojmian.html', 'knockout.validation'], function (ko
         self.rozwiaz = function () {
             if (!validateForm())
                 return;
-            var delta = self.b() * self.b() - 4 * self.a() * self.c();
-            if (delta > 0) {
-                self.liczba_rozwiazan(2);
-                self.x1((-self.b() - Math.sqrt(delta)) / (2 * self.a()));
-                self.x2((-self.b() + Math.sqrt(delta)) / (2 * self.a()));
-            }
-            else if (delta == 0) {
+
+            if(self.a() == 0){
                 self.liczba_rozwiazan(1);
-                self.x1(-self.b() / 2);
+                self.x1(-self.c()/self.b());
             }
             else {
-                self.liczba_rozwiazan(0);
-                self.x1("");
-                self.x2("");
+                var delta = self.b() * self.b() - 4 * self.a() * self.c();
+                if (delta > 0) {
+                    self.liczba_rozwiazan(2);
+                    self.x1((-self.b() - Math.sqrt(delta)) / (2 * self.a()));
+                    self.x2((-self.b() + Math.sqrt(delta)) / (2 * self.a()));
+                }
+                else if (delta == 0) {
+                    self.liczba_rozwiazan(1);
+                    self.x1(-self.b() / 2);
+                }
+                else {
+                    self.liczba_rozwiazan(0);
+                    self.x1("");
+                    self.x2("");
+                }
             }
         };
         self.obliczono = function () {

@@ -16,6 +16,19 @@ define(['components/trojmian/trojmian'], function(trojmian) {
             expect(instance.x1()).toBe(1);
         });
 
+        it('powinien rozwiązywać poprawnie równanie, dla a=0', function(){
+            var instance = new TrojmianViewModel();
+            //arrange
+            instance.a(0);
+            instance.b(1);
+            instance.c(2);
+            // act
+            instance.rozwiaz();
+            //assert
+            expect(instance.liczba_rozwiazan()).toBe(1);
+            expect(instance.x1()).toBe(-2);
+        })
+
     });
 });
 
